@@ -1,0 +1,16 @@
+@import 'src/utils/_flex';
+
+%inner-text-vertical-center {
+  @include inline-flex();
+  align-items: center;
+}
+
+@mixin ellipsis($selector: null) {
+  @if & {
+    @extend %inner-text-vertical-center;
+  } @else if $selector {
+    #{$selector} {
+      @extend %inner-text-vertical-center;
+    }
+  }
+}

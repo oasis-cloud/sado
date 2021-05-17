@@ -1,0 +1,24 @@
+@mixin inner-size($w: null, $h: null) {
+  @if $w {
+    width: $w;
+  }
+  @if $h {
+    height: $h;
+  }
+}
+
+@mixin size($width: null, $height: null, $selector: null) {
+  @if & {
+    @include inner-size($width, $height);
+  } @else if $selector {
+    #{$selector} {
+      @include inner-size($width, $height);
+    }
+  }
+}
+
+//
+//@include size(100px);
+//@include size(100px, 200px);
+//@include size(null, 200px);
+//@include size(50);

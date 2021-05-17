@@ -1,0 +1,18 @@
+%inner-clear {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+@mixin clear-fix($selector: null) {
+  @if & {
+    @extend %inner-clear;
+  } @else if $selector {
+    #{$selector} {
+      @extend %inner-clear;
+    }
+  }
+}
+
+// @include clear-fix()
+// @include clear-fix('.foo')

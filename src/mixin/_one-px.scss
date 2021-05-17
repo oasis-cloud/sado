@@ -1,0 +1,16 @@
+@mixin inner-border($direction, $color) {
+  border-#{$direction}: 1px solid #{$color};
+}
+
+@mixin one-px-solid($direction, $color, $selector: null) {
+  @if & {
+    @include inner-border($direction, $color);
+  } @else if $selector {
+    #{$selector} {
+      @include inner-border($direction, $color);
+    }
+  }
+}
+
+//
+//@include one-px-solid('top', '#ccc', '.foo');

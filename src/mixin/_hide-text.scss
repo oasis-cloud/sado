@@ -1,0 +1,14 @@
+%inner-hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+@mixin ellipsis($selector: null) {
+  @if & {
+    @extend %inner-hide-text;
+  } @else if $selector {
+    #{$selector} {
+      @extend %inner-hide-text;
+    }
+  }
+}

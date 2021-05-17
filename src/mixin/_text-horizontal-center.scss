@@ -1,0 +1,16 @@
+@import 'src/utils/_flex';
+
+%inner-horizontal-center {
+  @include inline-flex();
+  justify-content: center;
+}
+
+@mixin ellipsis($selector: null) {
+  @if & {
+    @extend %inner-horizontal-center;
+  } @else if $selector {
+    #{$selector} {
+      @extend %inner-horizontal-center;
+    }
+  }
+}

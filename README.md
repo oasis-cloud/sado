@@ -1,2 +1,2 @@
 # sado
-sass developer's kit
+scss developer's kit

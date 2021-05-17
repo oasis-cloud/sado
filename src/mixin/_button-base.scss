@@ -1,0 +1,17 @@
+%inner-button-base {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+@mixin button-base($selector: null) {
+  @if & {
+    @extend %inner-button-base;
+  } @else if $selector {
+    #{$selector} {
+      @extend %inner-button-base;
+    }
+  }
+}
