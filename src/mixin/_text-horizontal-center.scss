@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-@mixin ellipsis($selector: null) {
+@mixin horizontal-center($selector: null) {
   @if & {
     @extend %inner-horizontal-center;
   } @else if $selector {

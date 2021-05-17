@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-@mixin ellipsis($selector: null) {
+@mixin text-vertical-center($selector: null) {
   @if & {
     @extend %inner-text-vertical-center;
   } @else if $selector {

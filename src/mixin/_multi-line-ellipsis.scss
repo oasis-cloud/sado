@@ -1,0 +1,19 @@
+//_multi-line-ellipsis.scss
+
+@mixin inner-multi-line-ellipsis($rows) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+}
+
+@mixin multi-line-ellipsis($rows: 2, $selector: null) {
+  @if & {
+    @include inner-multi-line-ellipsis($rows);
+  } @else if $selector {
+    #{$selector} {
+      @include inner-multi-line-ellipsis($rows);
+    }
+  }
+}
