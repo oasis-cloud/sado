@@ -1,4 +1,11 @@
-@import 'src/mixin/clear-fix';
-@import 'src/mixin/ellipsis';
-@import 'src/mixin/one-px';
-@import 'src/mixin/size';
+@use './common/mixin/basic-button' as *;
+@use "common/mixin/basic-clear" as *;
+@use "common/mixin/basic-flex" as *;
+@use "common/mixin/basic-horizontal-center" as *;
+@use "common/mixin/basic-multi-line-ellipsis" as *;
+@use "common/mixin/basic-one-px" as *;
+@use "common/mixin/basic-position" as *;
+@use "common/mixin/basic-size" as *;
+@use "common/mixin/basic-text-hidden" as *;
+@use "common/mixin/basic-text-overflow" as *;
+@use "common/mixin/basic-vertical-middle" as *;

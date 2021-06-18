@@ -1,5 +1,3 @@
-//_multi-line-ellipsis.scss
-
 @mixin inner-multi-line-ellipsis($rows) {
   overflow: hidden;
   text-overflow: ellipsis;

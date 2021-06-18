@@ -10,15 +10,11 @@
 @mixin size($width: null, $height: null, $selector: null) {
   @if & {
     @include inner-size($width, $height);
+    @content;
   } @else if $selector {
     #{$selector} {
       @include inner-size($width, $height);
+      @content;
     }
   }
 }
-
-//
-//@include size(100px);
-//@include size(100px, 200px);
-//@include size(null, 200px);
-//@include size(50);

@@ -1,0 +1,31 @@
+@use 'src/common/mixin/basic-flex' as bf;
+
+%inner-vertical-middle-flex {
+  @include bf.inline-flex(null, false);
+  align-items: center;
+}
+
+%inner-vertical-middle-flex {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@mixin use-flex($isFlex) {
+  @if $isFlex {
+    @extend %inner-vertical-middle-flex;
+  } @else {
+    @extend %inner-vertical-middle;
+  }
+}
+
+@mixin text-vertical-center($selector: null, $isFlex: null) {
+  @if & {
+    @include use-flex($isFlex);
+    @content;
+  } @else if $selector {
+    #{$selector} {
+      @include use-flex($isFlex);
+      @content;
+    }
+  }
+}

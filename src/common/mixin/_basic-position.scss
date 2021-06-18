@@ -1,0 +1,19 @@
+@mixin inner-position($position, $edge-value) {
+  position: $position;
+  top: nth($edge-value, 1);
+  right: nth($edge-value, 2);
+  bottom: nth($edge-value, 3);
+  left: nth($edge-value, 4);
+}
+
+@mixin position($position, $edge-value, $selector: null) {
+  @if & {
+    @include inner-position($position, $edge-value);
+    @content;
+  } @else if $selector {
+    #{$selector} {
+      @include inner-position($position, $edge-value);
+      @content;
+    }
+  }
+}

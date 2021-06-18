@@ -1,16 +1,18 @@
-@import 'src/utils/_flex';
+@use 'src/common/mixin/basic-flex' as bf;
 
 %inner-horizontal-center {
-  @include inline-flex();
+  @include bf.basic-flex(null, true);
   justify-content: center;
 }
 
 @mixin horizontal-center($selector: null) {
   @if & {
     @extend %inner-horizontal-center;
+    @content;
   } @else if $selector {
     #{$selector} {
       @extend %inner-horizontal-center;
+      @content;
     }
   }
 }

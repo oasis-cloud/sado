@@ -1,0 +1,27 @@
+%inner-flex {
+  display: flex;
+}
+
+%inner-inline-flex {
+  display: inline-flex;
+}
+
+@mixin flex($isInline: false) {
+  @if $isInline {
+    @extend %inner-inline-flex;
+  } @else {
+    @extend %inner-flex;
+  }
+}
+
+@mixin basic-flex($selector: null, $isInline) {
+  @if & {
+    @include flex($isInline);
+    @content;
+  } @else if $selector {
+    #{$selector} {
+      @include flex;
+      @content;
+    }
+  }
+}

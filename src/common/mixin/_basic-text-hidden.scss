@@ -6,9 +6,11 @@
 @mixin ellipsis($selector: null) {
   @if & {
     @extend %inner-hide-text;
+    @content;
   } @else if $selector {
     #{$selector} {
       @extend %inner-hide-text;
+      @content;
     }
   }
 }
